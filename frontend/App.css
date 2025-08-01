@@ -1,0 +1,187 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #F6E8C8;
+  --foreground: #2D2D2D;
+  --card: rgba(255, 255, 255, 0.9);
+  --card-foreground: #2D2D2D;
+  --popover: #F6E8C8;
+  --popover-foreground: #2D2D2D;
+  --primary: #4B8B29;
+  --primary-foreground: #FFFFFF;
+  --secondary: #3DAED4;
+  --secondary-foreground: #FFFFFF;
+  --muted: #E8DCC0;
+  --muted-foreground: #6B7280;
+  --accent: #E6772E;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C0392B;
+  --border: #D9CDB0;
+  --input: #FFFFFF;
+  --ring: #4B8B29;
+  --chart-1: #4B8B29;
+  --chart-2: #3DAED4;
+  --chart-3: #E6772E;
+  --chart-4: #F7C815;
+  --chart-5: #4A7C59;
+  --sidebar: #F6E8C8;
+  --sidebar-foreground: #2D2D2D;
+  --sidebar-primary: #4B8B29;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E6772E;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #D9CDB0;
+  --sidebar-ring: #4B8B29;
+  
+  /* Asiri Cat Pattern Colors */
+  --asiri-dark-blue: #2A4D69;
+  --asiri-orange: #E6772E;
+  --asiri-yellow: #F7C815;
+  --asiri-green: #4A7C59;
+  --asiri-red: #C0392B;
+  --asiri-light-blue: #8CC0D4;
+}
+
+.dark {
+  --background: #0D0D12;
+  --foreground: #FFFFFF;
+  --card: #1F2937;
+  --card-foreground: #FFFFFF;
+  --popover: #1F2937;
+  --popover-foreground: #FFFFFF;
+  --primary: #4B8B29;
+  --primary-foreground: #FFFFFF;
+  --secondary: #3DAED4;
+  --secondary-foreground: #FFFFFF;
+  --muted: #374151;
+  --muted-foreground: #9CA3AF;
+  --accent: #3DAED4;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C2372D;
+  --border: #374151;
+  --input: #374151;
+  --ring: #4B8B29;
+  --chart-1: #4B8B29;
+  --chart-2: #3DAED4;
+  --chart-3: #C2372D;
+  --chart-4: #6B7280;
+  --chart-5: #9CA3AF;
+  --sidebar: #1F2937;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #4B8B29;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3DAED4;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #374151;
+  --sidebar-ring: #4B8B29;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    direction: rtl;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/src/assets/asiri-pattern-bg.png');
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+/* Custom Afaq Platform Styles */
+.afaq-gradient {
+  background: linear-gradient(135deg, #4B8B29 0%, #E6772E 50%, #3DAED4 100%);
+}
+
+.afaq-text-gradient {
+  background: linear-gradient(135deg, #4B8B29 0%, #E6772E 50%, #3DAED4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.afaq-shadow {
+  box-shadow: 0 10px 25px rgba(75, 139, 41, 0.1);
+}
+
+.afaq-hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.afaq-hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.afaq-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 199, 184, 0.3);
+}
+
+.afaq-hero-bg {
+  background: linear-gradient(135deg, rgba(75, 139, 41, 0.8) 0%, rgba(230, 119, 46, 0.8) 50%, rgba(61, 174, 212, 0.8) 100%),
+              url('/src/assets/asiri-pattern-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
